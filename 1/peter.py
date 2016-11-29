@@ -16,6 +16,7 @@ def main(args):
     penny. We use a fair coin (50/50 chance of heads or tails).
     """
     import numpy as np
+    import lib
 
     n = args['flips_per_experiment']
     ec = args['experiment_count']
@@ -48,25 +49,15 @@ def main(args):
         n_lead_per_ex[n_ex] = n_lead
         first_heads_per_ex[n_ex] = bool(flips[0])
 
-    spikegraph_of(winnings_per_ex)
-    spikegraph_of(n_lead_per_ex)
+    lib.spikegraph_of_points(winnings_per_ex)
+    lib.spikegraph_of_points(n_lead_per_ex)
     # spikegraph of the number of times the player was in the lead if their first flip was heads
     first_heads = [n_lead_per_ex[i] for i in range(ec) if first_heads_per_ex[i]]
-    spikegraph_of(first_heads)
-    # spikegraph of the number of times the player was in the lead if their first flip was tails
+    lib.spikegraph_of_points(first_heads)
+    # spikegraph of t_pointshe number of times the player was in the lead if their first flip was tails
     first_tails = [n_lead_per_ex[i] for i in range(ec) if not first_heads_per_ex[i]]
-    spikegraph_of(first_tails)
+    lib.spikegraph_of_points(first_tails)
 
-def spikegraph_of(points):
-    import numpy as np
-    import matplotlib.pyplot as plt
-    from collections import Counter
-
-    counts = Counter(points)
-    x = counts.keys()
-    y = np.array(list(counts.values())) / len(points)
-    plt.bar(left=x, height=y, width=0.1)
-    plt.show()
 
 if __name__ == '__main__':
     args = parse_args()
