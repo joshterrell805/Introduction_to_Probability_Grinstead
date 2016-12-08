@@ -1,4 +1,4 @@
-The corresponding notes for this chapter are at http://joshterrell.com/blog/posts/TODO fill this in!
+The corresponding notes for this chapter are at http://joshterrell.com/blog/posts/1481168309
 
 # Section 2.1
 
