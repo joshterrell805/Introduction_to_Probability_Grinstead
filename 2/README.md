@@ -53,3 +53,75 @@ estimate error (e - estimate) = -0.008855717014070397
 ```
 
 ![image](https://cloud.githubusercontent.com/assets/4649127/20868393/618013b8-ba0f-11e6-8397-57633a7cf69b.png)
+
+# Section 2.2
+
+## Exercises
+
+### Problem 1
+> Suppose you choose at random a real number X from the interval [2, 10].
+>
+> (a) Find the density function f(x) and the probability of an event E for this experiment, where E is a subinterval [a, b] of [2, 10].
+>
+> (b) From (a), find the probability that X > 5, that 5 < X < 7, and that
+X<sup>2</sup> − 12X + 35 > 0.
+
+#### Problem 1(a)
+Since X is chosen randomly from the interval, no area of the interval is more likely to be drawn from than any other. The density function for the outcome of X is uniform (constant).
+
+The cumulative distribution function, F(x), is:
+
+- 0 where X < 2
+- (X-2)/(10-2) where 2 <= X <= 10
+- 1 where X > 10
+
+The probability density function, f(x), is the derivative of the cumulative distribution function:
+
+- 0 where X < 2
+- 1/8 where 2 <= X <= 10
+- 0 where X > 10
+
+And the probability of some event E occuring where E is a subinterval [a, b] of [2, 10] is
+
+$$
+P(E) = \\int\_a^b \\frac{1}{8}dx
+$$
+
+#### Problem 1(b)
+
+P(X > 5):
+
+$$
+P(X > 5) = \\int\_5^10 \\frac{1}{8}dx = \\frac{10 - 5}{8} = \\frac{5}{8}
+$$
+
+P(5 < X < 7):
+
+$$
+P(5 < X < 7) = \\int\_5^7 \\frac{1}{8}dx = \\frac{7 - 5}{8} = \\frac{1}{4}
+$$
+
+P(X^2 - 12X + 35 > 0):
+
+$$
+P(X^2 - 12X + 35 > 0) = P((X - 7)(X - 5) > 0) = P(X > 7 or X < 5) = P(X > 7) + P(X < 5)
+ = \\int\_7^10 \\frac{1}{8}dx + \\int\_2^5 \\frac{1}{8}dx = \\frac{3}{8} + \\frac{3}{8} = \\frac{3}{4}
+$$
+
+or
+
+$$
+P(X^2 - 12X + 35 > 0) = P(X > 7 or X < 5) = 1 - P(not (X > 7 or X < 5)) = 1 - P(X < 7 and X > 5) = 1 - \\frac{1}{4}
+$$
+
+### Problem 17
+> Write a program to choose a random number X in the interval [2, 10] 1000 times and record what fraction of the outcomes satisfy X > 5, what fraction satisfy 5 < X < 7, and what fraction satisfy x 2 − 12x + 35 > 0. How do these results compare with Exercise 1?
+
+```
+[josh@joshLT 2]$ python ch2.2_p17.py
+Experimental results from drawing a random real number from [2, 8] n=1000 times:
+P(X > 5) = 0.628
+P(5 < X < 7) = 0.235
+```
+
+Originally I had made an arithmetic error converting (10-5)/8 to 1/2. The experiment made me recheck my work, and the experimental results were correct.
