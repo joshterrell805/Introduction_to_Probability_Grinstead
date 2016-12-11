@@ -113,6 +113,7 @@ or
 Experimental results from drawing a random real number from [2, 8] n=1000 times:
 P(X > 5) = 0.628
 P(5 < X < 7) = 0.235
+P(X^2 - 12X + 35 > 0) = 0.765
 ```
 
 Originally I had made an arithmetic error converting (10-5)/8 to 1/2. The experiment made me recheck my work, and the experimental results were correct.
