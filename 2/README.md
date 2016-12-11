@@ -83,36 +83,27 @@ The probability density function, f(x), is the derivative of the cumulative dist
 
 And the probability of some event E occuring where E is a subinterval [a, b] of [2, 10] is
 
-$$
-P(E) = \\int\_a^b \\frac{1}{8}dx
-$$
+![image](https://cloud.githubusercontent.com/assets/4649127/21082188/78ebfe1e-bf8b-11e6-9635-c6a1fe991a7e.png)
+
 
 #### Problem 1(b)
 
 P(X > 5):
 
-$$
-P(X > 5) = \\int\_5^10 \\frac{1}{8}dx = \\frac{10 - 5}{8} = \\frac{5}{8}
-$$
+![image](https://cloud.githubusercontent.com/assets/4649127/21082182/54b0bf6c-bf8b-11e6-8809-f5f10852bb9c.png)
 
 P(5 < X < 7):
 
-$$
-P(5 < X < 7) = \\int\_5^7 \\frac{1}{8}dx = \\frac{7 - 5}{8} = \\frac{1}{4}
-$$
+![image](https://cloud.githubusercontent.com/assets/4649127/21082194/9289c036-bf8b-11e6-98f1-0d0eeaa000de.png)
 
 P(X^2 - 12X + 35 > 0):
 
-$$
-P(X^2 - 12X + 35 > 0) = P((X - 7)(X - 5) > 0) = P(X > 7 or X < 5) = P(X > 7) + P(X < 5)
- = \\int\_7^10 \\frac{1}{8}dx + \\int\_2^5 \\frac{1}{8}dx = \\frac{3}{8} + \\frac{3}{8} = \\frac{3}{4}
-$$
+![image](https://cloud.githubusercontent.com/assets/4649127/21082219/035d7442-bf8c-11e6-8bd0-bee1abc0221a.png)
+
 
 or
 
-$$
-P(X^2 - 12X + 35 > 0) = P(X > 7 or X < 5) = 1 - P(not (X > 7 or X < 5)) = 1 - P(X < 7 and X > 5) = 1 - \\frac{1}{4}
-$$
+![image](https://cloud.githubusercontent.com/assets/4649127/21082248/828b9974-bf8c-11e6-8113-18873540b889.png)
 
 ### Problem 17
 > Write a program to choose a random number X in the interval [2, 10] 1000 times and record what fraction of the outcomes satisfy X > 5, what fraction satisfy 5 < X < 7, and what fraction satisfy x 2 − 12x + 35 > 0. How do these results compare with Exercise 1?
