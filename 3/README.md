@@ -1,4 +1,4 @@
-The corresponding notes for this chapter are at http://joshterrell.com/blog/posts/**TODO**
+The corresponding notes for this chapter are at http://joshterrell.com/blog/posts/1482109511
 
 # Section 3.1
 
@@ -82,6 +82,6 @@ Not only did my theoretical approach require much more knowledge than my computa
 
 ## Power Curve
 
-[power-curve.py](power-curve.py) calculates m, the critical value, for an experiment and plots the power curve described in this section of the book. See the corresponding blog post for a good description of this.
+[power-curve.py](power-curve.py) calculates m, the critical value, for an experiment and plots the power curve described in this section of the book. See the [corresponding blog post](http://joshterrell.com/blog/posts/1482109511) for a good description of this.
 
 ![image](https://cloud.githubusercontent.com/assets/4649127/21297898/fbaae386-c53c-11e6-80ae-286f667d205a.png)
