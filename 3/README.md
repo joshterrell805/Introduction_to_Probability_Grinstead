@@ -77,3 +77,11 @@ while True:
 
 #### Comments
 Not only did my theoretical approach require much more knowledge than my computational approach, it was much more error-prone. When I ran the calculations for the first time, for the computational version I got 0.077 and for the theoretical version I got 0.052. Because the computational version was so simple, I accepted it as correct and investigated any errors in the theoretical computation. It turns out I had a subtle copying error in the first term--I forgot to multiply by 4. I think the computational approach was much more simple. In hind-sight, an easier way to do the theoretical approach would have been to take 1 minus the prob of not getting an ace on the 13th draw. The point still stands that the theoretical approach is more error prone (though less so) and requires more knowledge.
+
+# Section 3.2 
+
+## Power Curve
+
+[power-curve.py](power-curve.py) calculates m, the critical value, for an experiment and plots the power curve described in this section of the book. See the corresponding blog post for a good description of this.
+
+![image](https://cloud.githubusercontent.com/assets/4649127/21297898/fbaae386-c53c-11e6-80ae-286f667d205a.png)
