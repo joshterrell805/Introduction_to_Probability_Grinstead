@@ -85,3 +85,69 @@ Not only did my theoretical approach require much more knowledge than my computa
 [power-curve.py](power-curve.py) calculates m, the critical value, for an experiment and plots the power curve described in this section of the book. See the [corresponding blog post](http://joshterrell.com/blog/posts/1482109511) for a good description of this.
 
 ![image](https://cloud.githubusercontent.com/assets/4649127/21297898/fbaae386-c53c-11e6-80ae-286f667d205a.png)
+
+## Exercises
+
+### Problem 10
+> In a ten-question true-false exam, find the probability that a student gets a
+grade of 70 percent or better by guessing. Answer the same question if the
+test has 30 questions, and if the test has 50 questions.
+
+For the first quesiton, either the student gets 7, 8, 9, or 10 questions correct.
+
+The  binomial distribution will work well here and both conditions are met. Each trail is independent, each trial has probability p=0.5 of occuring.
+
+```
+P(7/10) = (10 choose 7) * 0.5^7 * 0.5^3
+        = (10 choose 7) * 0.5^10
+
+P(8/10) = (10 choose 8) * 0.5^10
+...
+
+P(>=7/10) = ((10 choose 7)  + (10 choose 8) + (10 choose 9) + (10 choose 10)) * 0.5^10
+          = 0.171875 (see code below)
+```
+```py
+import scipy.misc
+c = scipy.misc.comb
+(c(10, 7) + c(10, 8) + c(10, 9) + c(10, 10)) * 0.5**10
+# 0.171875
+
+def experiment(n, thresh=0.7, p=0.5):
+  import math
+  n_start = math.ceil(thresh * n)
+  return sum(c(n, k) * p**k * (1-p)**(n-k) for k in range(n_start, n+1))
+
+experiment(10)
+# 0.171875
+experiment(30)
+# 0.02138697262853384
+experiment(50)
+# 0.0033002239834054592
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

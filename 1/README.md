@@ -72,6 +72,83 @@ The gamblers were correct. In one million rolls of 3 six-sided die, 9 came up le
   - 27/216 = 0.125
 - actual numbers from experiment: p9: 0.115561, p10: 0.124739
 
+### Problem 15
+> Estimate, by simulation, the average number of children there would be in
+a family if all people had children until they had a boy. Do the same if all
+people had children until they had at least one boy and at least one girl. How
+many more children would you expect to find under the second scheme than
+under the first in 100,000 families? (Assume that boys and girls are equally
+likely.)
+
+#### Mean # of children until boy (p=0.5)
+
+```
+import time
+import numpy as np
+
+n_experiments = 0
+last_print = time.time()
+print('press ctrl+c to exit')
+X = []
+while True:
+  trials = 0
+  boy = False
+  while not boy:
+    trials += 1
+    if np.random.randint(2) == 0:
+      boy = True
+  X.append(trials)
+  now = time.time()
+  if now - last_print > 10:
+    print('n: {}'.format(len(X)))
+    print('average: {}'.format(np.mean(X)))
+    last_print = now
+  
+# n: 592209
+# average: 1.9987555069240759
+# n: 1180436
+# average: 2.000324456387301
+# n: 1759775
+# average: 1.9998317966785526
+```
+
+#### Mean # of children until boy and girl (p=0.5)
+```
+import time
+import numpy as np
+
+n_experiments = 0
+last_print = time.time()
+print('press ctrl+c to exit')
+X = []
+while True:
+  trials = 0
+  boy = False
+  girl = False
+  while not (boy and girl):
+    trials += 1
+    if np.random.randint(2) == 0:
+      boy = True
+    else:
+      girl = True
+  X.append(trials)
+  now = time.time()
+  if now - last_print > 10:
+    print('n: {}'.format(len(X)))
+    print('average: {}'.format(np.mean(X)))
+    last_print = now
+
+# n: 342066
+# average: 2.9966673098174037
+# n: 735956
+# average: 2.9981805977531266
+# n: 1127937
+# average: 2.9990362936937083
+```
+
+#### More children in second than first?
+I'd expect to find 1 more child, on average, in second scheme (mean=3) than first (mean=2).
+
 # Section 1.2
 ## Exercises
 ### Problem 15
